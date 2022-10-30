@@ -10,9 +10,7 @@ class Solution {
         }
         int[] bucket = new int[max-min+1];
         for (int num: nums) {
-            // if (num > 0) {
-                bucket[num-min]++;
-            // }
+            bucket[num-min]++;
         }
         
         for (int i=bucket.length-1; i>-1; i--) {
