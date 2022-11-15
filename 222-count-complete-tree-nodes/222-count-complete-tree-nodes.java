@@ -37,12 +37,8 @@ class Solution {
         int min = left;
         int max = right;
         
-        System.out.println(search(root, 4));
-        
         while(left != right) {
             int mid = (left+right)/2;
-            System.out.println("mid: " +mid);
-            System.out.println(search(root, mid));
             if (search(root, mid)) {
                 left = mid + 1;
             } else {
