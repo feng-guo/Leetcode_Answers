@@ -8,25 +8,25 @@ class Solution {
                 if (grid[i][j] == 0) {
                     Set<Integer> islands = new HashSet<>();
                     if (i != 0) {
-                        Pair<Integer, Integer> k = new Pair((i-1), j);
+                        int k = (i-1)*grid[0].length + j;
                         if (point_to_island.containsKey(k)) {
                             islands.add(point_to_island.get(k));
                         }
                     }
                     if (i != grid.length-1) {
-                        Pair<Integer, Integer> k = new Pair((i+1), j);
+                        int k = (i+1)*grid[0].length + j;
                         if (point_to_island.containsKey(k)) {
                             islands.add(point_to_island.get(k));
                         }
                     }
                     if (j != 0) {
-                        Pair<Integer, Integer> k = new Pair(i, j-1);
+                        int k = (i)*grid[0].length + j-1;
                         if (point_to_island.containsKey(k)) {
                             islands.add(point_to_island.get(k));
                         }
                     }
                     if (j != grid[0].length-1) {
-                        Pair<Integer, Integer> k = new Pair(i, j+1);
+                        int k = (i)*grid[0].length + j+1;
                         if (point_to_island.containsKey(k)) {
                             islands.add(point_to_island.get(k));
                         }
@@ -44,7 +44,7 @@ class Solution {
 
     int current;
     Map<Integer, Integer> island_size;
-    Map<Pair<Integer, Integer>, Integer> point_to_island;
+    Map<Integer, Integer> point_to_island;
     
     public int maxAreaOfIsland(int[][] grid) {
         int id = 0;
@@ -73,7 +73,7 @@ class Solution {
             if (!(x < 0 || y < 0 || x > grid.length-1 || y>grid[0].length-1 || grid[x][y] != 1 || visited[x][y])) {
                 visited[x][y] = true;
                 current++;
-                point_to_island.put(new Pair(x, y), id);
+                point_to_island.put(x*grid[0].length + y, id);
                 explore(grid, x-1, y, visited, id);
                 explore(grid, x+1, y, visited, id);
                 explore(grid, x, y-1, visited, id);
