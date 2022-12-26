@@ -11,8 +11,8 @@ class Solution {
             return true;
         }
         int max = nums[index];
-        for (int i=1; i<= max; i++) {
-            if (set.add(index+i)) {
+        for (int i=max; i>0; i--) {
+            if (set.add(index+i) && index+i<nums.length) {
                 if (jump(nums, index+i)) {
                     return true;
                 }
