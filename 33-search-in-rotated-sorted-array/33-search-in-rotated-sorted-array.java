@@ -2,12 +2,6 @@ class Solution {
     public int search(int[] nums, int target) {
         int left = 0;
         int right = nums.length-1;
-        // int mid = (left+right)/2;
-        // boolean minLeft = false;
-        // if (nums[mid] < nums[right]) {
-        //     //Min number on left side
-        //     minLeft = true;
-        // }
         while (left <= right) {
             int mid = (left+right)/2;
             if (nums[left] == target) {
@@ -23,7 +17,6 @@ class Solution {
                 right = mid;
             }
         }
-        
         return -1;
     }
 }
