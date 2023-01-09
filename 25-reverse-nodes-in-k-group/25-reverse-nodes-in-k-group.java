@@ -36,30 +36,6 @@ class Solution {
                 array[i].next = array[i-1];
             }
         }
-        return head;
-        
-        
-        // return head;
-        
-//         List<ListNode> list = new ArrayList<>();
-        
-//         for (int i=0; i<length/k; i++) {
-            
-//             for (int j=0; j<k; j++) {
-//                 if (i==0 && j==0) {
-//                     head = array[k-1];
-//                 }
-//                 if (k*(i+1)-j-1 == 0) {
-//                     array[k*(i+1)-j-1].next = null;
-//                 } else {
-//                     array[k*(i+1)-j-1].next = array[(k*i+1)-j-2];  
-//                 }
-//             }
-//             list.add(array[k*(i+1)-1]);
-//         }
-//         if (length/k*k != length) {
-//             list.add(array[length/k*k]);
-//         }
-        
+        return head;        
     }
 }
