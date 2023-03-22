@@ -1,21 +1,19 @@
 class Solution {
     public int jump(int[] nums) {
-        // The starting range of the first jump is [0, 0]
-        int answer = 0, n = nums.length;
-        int curEnd = 0, curFar = 0;
-        
-        for (int i = 0; i < n - 1; ++i) {
-            // Update the farthest reachable index of this jump.
-            curFar = Math.max(curFar, i + nums[i]);
-
-            // If we finish the starting range of this jump,
-            // Move on to the starting range of the next jump.
-            if (i == curEnd) {
-                answer++;
-                curEnd = curFar;
+        int[] min = new int[nums.length];
+        int max = 0;
+        for (int i=0; i<nums.length; i++) {
+            if (nums[i] + i > max) {
+                
+                for (int j=max+1; j<=Math.min(nums[i]+i, nums.length-1); j++) {
+                    min[j] = min[i]+1;
+                }
+                
+                
+                max = nums[i] + i;
             }
         }
         
-        return answer;
+        return min[nums.length-1];
     }
 }
