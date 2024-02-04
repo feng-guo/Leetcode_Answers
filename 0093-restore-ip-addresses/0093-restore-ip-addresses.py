@@ -22,7 +22,6 @@ class Solution:
             numbers[1] = s[index2[0]:index2[1]]
             numbers[2] = s[index2[1]:index2[2]]
             numbers[3] = s[index2[2]:]
-            print(numbers)
             valid = True
             for n in numbers:
                 if (n != "0" and n[0] == "0") or not(255 >= int(n) >= 0):
