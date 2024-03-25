@@ -2,11 +2,9 @@ class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
         isOnePresent = False
         
-        for num in nums:
+        for i, num in enumerate(nums):
             if num == 1:
                 isOnePresent = True
-        
-        for i, num in enumerate(nums):
             if num < 0:
                 nums[i] = 0
         
