@@ -9,9 +9,6 @@ class Solution:
                 check_dupe.add(n)
             else:
                 dupe = n
-                break
-        
-        check_dupe = set(nums)
         
         for i in range(1, len(nums)+1):
             if i not in check_dupe:
