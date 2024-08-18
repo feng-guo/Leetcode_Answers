@@ -2,13 +2,13 @@ class Solution:
     def largestPerimeter(self, nums: List[int]) -> int:
         nums.sort()
         
-        sums = 0
-        res = -1
+        perimeter = sum(nums)
         
-        for num in nums:
-            if sums > num:
-                res = max(res, sums+num)
-            sums += num
-        
-        return res
-        
+        for i, side in enumerate(nums[::-1]):
+            if i == len(nums) - 2:
+                return -1
+            
+            if side < perimeter - side:
+                return perimeter
+            else:
+                perimeter -= side
